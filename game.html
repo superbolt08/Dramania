@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dramania Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reuse previous CSS styles for consistency */
+        .game-panel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            background-color: rgba(98, 101, 101, 0.678);
+        }
+
+        .title, .round-number, .player-display, .prompt-display {
+            margin-bottom: 20px;
+        }
+
+        .title, .round-number {
+            background-color: #a24ca4;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .player-display, .prompt-display {
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            width: 50%;
+        }
+
+        .button {
+            background-color: #cb6ce6;
+            border: none;
+            color: white;
+            padding: 10px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 12px;
+            transition: background-color 0.4s;
+        }
+
+        .button:hover {
+            background-color: #c13ce6;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-panel">
+        <div class="round-number">Round 1</div>
+        <div class="player-display">Player Name</div>
+        <div class="prompt-display">Prompt Text</div>
+        <button class="button" onclick="nextPlayer()">Next</button>
+    </div>
+    <script src="/DRAMANIA/script/game.js"></script>
+</body>
+</html>

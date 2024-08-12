@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dramania Lobby</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        .game-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 5fr;
+            gap: 2rem;
+            padding: 40px 20px;
+            background-color: rgba(98, 101, 101, 0.678);
+            position: relative;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 50%;
+            margin: 0 auto;
+            gap: 2rem;
+        }
+
+        .item label {
+            font-size: 1.4em;
+        }
+
+        .title {
+            grid-column: span 2;
+            background-color: #a24ca4;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .player-input {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .player-input input {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        .button {
+            background-color: #cb6ce6;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 12px;
+            transition: background-color 0.4s;
+        }
+
+        .button:hover {
+            background-color: #c13ce6;
+        }
+
+        .players {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .player-slot {
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            flex: 0 1 auto;
+        }
+
+        .remove {
+            color: red;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-panel">
+        <div class="title item">Add Players</div>
+        <div class="player-input item">
+            <label for="playerName">Enter Player name:</label>
+            <input type="text" id="playerName" placeholder="Player name">
+            <button class="button" onclick="addPlayer()">Add Player</button>
+        </div>
+        <div class="item">
+            <label for="players-list">Player List:</label>
+            <div class="players" id="players-list">
+                <!-- Player slots will be dynamically added here -->
+            </div>
+            <button class="button" onclick="startGame()">Start</button>
+        </div>
+    </div>
+    <script src="/DRAMANIA/script/lobby.js"></script>
+</body>
+</html>
